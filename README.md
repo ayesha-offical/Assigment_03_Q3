@@ -20,8 +20,8 @@ Create an AI agent that can **suggest a product** based on the user's problem or
 ```bash
 User: I have a headache.
 Agent: I recommend "Panadol". It helps relieve headaches due to its paracetamol content, which reduces pain and fever.
-
-📁 Assignment 2: Mood Analyzer with Handoff
+```
+### 📁 Assignment 2: Mood Analyzer with Handoff
 File: mood_handoff.py
 
 📌 Objective:
