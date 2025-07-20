@@ -1,98 +1,96 @@
-# 🧠 Agentic AI Assignments – Toolkit Series
+# 🧠 Agentic AI Assignments – OpenAI Agents
 
-This repository contains three assignments developed using **OpenAI's Agentic Framework with Tool usage**, focusing on practical implementations of agents and orchestrators using Python.
-
----
-
-## 📁 Assignment 1: Simple Capital Info Agent
-
-### 🔹 File: `main.py`
-
-This is a basic agent using the **Function as a Tool** approach.
-
-### ✅ Features:
-- Takes a country name as input.
-- Uses a function tool to return its capital.
-- Responds through a chat loop.
-
-### 💡 Sample Output:
-User: What is the capital of France?
-Agent: The capital of France is Paris.
+This repository contains **three individual Python assignments** built using the OpenAI Agents framework. Each assignment is an independent application of AI agents to solve a specific task such as product recommendation, mood analysis, or country info retrieval using tools.
 
 ---
 
-## 📁 Assignment 2: Toolkit with Multiple Tools
+## 📁 Assignment 1: Smart Store Agent
 
-### 🔹 File: `multi_toolkit.py`
+**File:** `product_suggester.py`
 
-This assignment extends the previous idea with **multiple tools** in a single toolkit agent.
+### 📌 Objective:
+Create an AI agent that can **suggest a product** based on the user's problem or query.
 
-### ✅ Tools Implemented:
-- Get Capital
-- Get Language
-- Get Population
+### 🧠 Functionality:
+- The agent receives a user's input like `"I have a headache"`.
+- It **analyzes the user's need** and suggests a relevant product (e.g., a medicine).
+- It also explains **why** that product is a good fit for the user's need.
 
-### 💡 Sample Output:
-Country: Japan
-Capital: Tokyo
-Language: Japanese
-Population: 126,000,000
-
-markdown
----
-
-## 📁 Assignment 3: Country Info Bot with Tool Agents
-
-### 🔹 File: `country_info_toolkit.py`
-
-This assignment builds a **multi-agent system**, where each tool is separated into its own agent. An **orchestrator agent** calls each of them as needed.
-
-### 🧰 Agents Used:
-1. `capital_agent`: Returns the capital of the country.
-2. `language_agent`: Returns the official language(s).
-3. `population_agent`: Returns the population.
-4. `orchestrator_agent`: Coordinates all above agents to give full country info.
-
-### 💡 Sample Output:
-User: Tell me about Pakistan
-Response:
-Capital: Islamabad
-Language: Urdu
-Population: 241,000,000
-
----
-
-## 🧪 Technologies Used
-- Python 3.10+
-- OpenAI Agents SDK
-- dotenv
-- Tool Abstractions via `tool()` decorator
-- Agent-Orchestration Logic
-
----
-
-## 📦 Setup Instructions
-
+### ✅ Example Output:
 ```bash
-git clone https://github.com/your-username/agentic-assignments.git
-cd agentic-assignments
+User: I have a headache.
+Agent: I recommend "Panadol". It helps relieve headaches due to its paracetamol content, which reduces pain and fever.
 
-# Install dependencies
+📁 Assignment 2: Mood Analyzer with Handoff
+File: mood_handoff.py
+
+📌 Objective:
+Create a multi-agent system that analyzes a user’s mood and, if needed, hands off the task to another agent.
+
+🧠 Functionality:
+Agent 1: Detects mood from user message (happy, sad, angry, etc.).
+
+If mood is "sad" or "stressed", it triggers:
+
+Agent 2: Suggests a mood-lifting activity (e.g., go for a walk, listen to music).
+
+Uses Runner.run() for invoking both agents.
+
+✅ Example Flow:
+
+User: I'm feeling really down lately...
+Agent 1: Detected mood - sad.
+Agent 2: Suggestion - Take a short walk outside or talk to a friend you trust.
+
+📁 Assignment 3: Country Info Bot using Tools
+File: country_info_toolkit.py
+
+📌 Objective:
+Use OpenAI tool agents to fetch information about countries based on user input.
+
+🧠 Functionality:
+Tool 1: Returns the capital of a country.
+
+Tool 2: Returns the official language.
+
+Tool 3: Returns the population.
+
+An Orchestrator Agent takes the user's country name and calls all 3 tools using tool_choice and tool_output.
+
+✅ Example Output:
+
+User: Tell me about France.
+Agent:
+- Capital: Paris
+- Language: French
+- Population: 67 million
+📦 Tech Stack
+Python 🐍
+
+OpenAI Agents SDK
+
+JSON-based tool creation
+
+CLI or terminal-based interaction
+
+✅ How to Run
+Install dependencies:
+
+
 pip install -r requirements.txt
+Set your OpenAI API key:
 
-# Set your Gemini API Key
-touch .env
-echo "GEMINI_API_KEY=your_key_here" >> .env
-🚀 Run Examples
 
-# For Assignment 1
-python main.py
+export OPENAI_API_KEY="your-key-here"
+Run any assignment:
 
-# For Assignment 2
-python multi_toolkit.py
 
-# For Assignment 3
+python product_suggester.py
+python mood_handoff.py
 python country_info_toolkit.py
-✍️ Author
-👩‍💻 Ayesha Mughal
-🚀 Passionate about Agentic AI | Pythonista | Frontend Developer
+📄 License
+This project is for educational use under MIT License.
+
+✨ Author
+Made with ❤️ by Ayesha Mughal
+For Agentic AI Quiz Practice – July 2025
