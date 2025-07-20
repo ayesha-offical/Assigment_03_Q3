@@ -1,96 +1,68 @@
-# 🧠 Agentic AI Assignments – OpenAI Agents
+# 🧠 Agentic AI Assignments
 
-This repository contains **three individual Python assignments** built using the OpenAI Agents framework. Each assignment is an independent application of AI agents to solve a specific task such as product recommendation, mood analysis, or country info retrieval using tools.
+This repository contains three interactive Python-based assignments demonstrating the use of AI agents using OpenAI's `openai-agents` SDK.
 
 ---
 
 ## 📁 Assignment 1: Smart Store Agent
 
-**File:** `product_suggester.py`
+**Filename:** `product_suggester.py`
 
-### 📌 Objective:
-Create an AI agent that can **suggest a product** based on the user's problem or query.
+### Objective:
+Create an agent that suggests a product (medicine) based on user input.
 
-### 🧠 Functionality:
-- The agent receives a user's input like `"I have a headache"`.
-- It **analyzes the user's need** and suggests a relevant product (e.g., a medicine).
-- It also explains **why** that product is a good fit for the user's need.
+### Functionality:
+- If the user says "I have a headache", it should suggest a medicine (e.g., Paracetamol).
+- The agent should also **explain the reason** for the suggestion.
 
-### ✅ Example Output:
+---
+
+## 📁 Assignment 2: Mood Analyzer with Handoff
+
+**Filename:** `mood_handoff.py`
+
+### Objective:
+Detect mood and recommend activities.
+
+### Functionality:
+- **Agent 1** analyzes the mood from user message (like “happy”, “sad”, “stressed”).
+- If mood is “sad” or “stressed”, a **handoff** to **Agent 2** occurs.
+- **Agent 2** then suggests a mood-boosting activity (e.g., walk, meditation).
+- Uses `Runner.run()` to invoke both agents.
+
+---
+
+## 📁 Assignment 3: Country Info Bot using Tools
+
+**Filename:** `country_info_toolkit.py`
+
+### Objective:
+Build a country information retriever with tools.
+
+### Functionality:
+- Create **3 tool agents**:
+  1. **Capital Finder**
+  2. **Language Finder**
+  3. **Population Finder**
+- One **orchestrator agent** receives a country name and invokes all three tools.
+- Returns structured information with capital, language, and population.
+
+---
+
+## ✅ Notes:
+- All assignments are implemented in separate Python files.
+- Agents utilize `OpenAI-Agent` interface via `Runner.run()` and `ToolAgent`.
+
+---
+
+## 🚀 Run Instructions:
+
 ```bash
-User: I have a headache.
-Agent: I recommend "Panadol". It helps relieve headaches due to its paracetamol content, which reduces pain and fever.
-```
-### 📁 Assignment 2: Mood Analyzer with Handoff
-File: mood_handoff.py
-
-📌 Objective:
-Create a multi-agent system that analyzes a user’s mood and, if needed, hands off the task to another agent.
-
-🧠 Functionality:
-Agent 1: Detects mood from user message (happy, sad, angry, etc.).
-
-If mood is "sad" or "stressed", it triggers:
-
-Agent 2: Suggests a mood-lifting activity (e.g., go for a walk, listen to music).
-
-Uses Runner.run() for invoking both agents.
-
-✅ Example Flow:
-
-User: I'm feeling really down lately...
-Agent 1: Detected mood - sad.
-Agent 2: Suggestion - Take a short walk outside or talk to a friend you trust.
-
-📁 Assignment 3: Country Info Bot using Tools
-File: country_info_toolkit.py
-
-📌 Objective:
-Use OpenAI tool agents to fetch information about countries based on user input.
-
-🧠 Functionality:
-Tool 1: Returns the capital of a country.
-
-Tool 2: Returns the official language.
-
-Tool 3: Returns the population.
-
-An Orchestrator Agent takes the user's country name and calls all 3 tools using tool_choice and tool_output.
-
-✅ Example Output:
-
-User: Tell me about France.
-Agent:
-- Capital: Paris
-- Language: French
-- Population: 67 million
-📦 Tech Stack
-Python 🐍
-
-OpenAI Agents SDK
-
-JSON-based tool creation
-
-CLI or terminal-based interaction
-
-✅ How to Run
-Install dependencies:
-
-
-pip install -r requirements.txt
-Set your OpenAI API key:
-
-
-export OPENAI_API_KEY="your-key-here"
-Run any assignment:
-
-
+pip install openai-agents
 python product_suggester.py
 python mood_handoff.py
 python country_info_toolkit.py
-📄 License
-This project is for educational use under MIT License.
+```
 
-✨ Author
-Made with ❤️ by Ayesha Mughal
-For Agentic AI Quiz Practice – July 2025
+## Author: 
+**Made by Ayesha Faisal😊**
