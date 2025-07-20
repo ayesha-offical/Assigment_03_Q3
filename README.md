@@ -1,159 +1,98 @@
-# 🧠 Agentic AI Assignments - ReadMe
+# 🧠 Agentic AI Assignments – Toolkit Series
 
-Welcome to the **Agentic AI Assignments Repository**. This repository contains three distinct assignments based on the concepts of AI agents, tools, orchestration, and real-time decision-making using OpenAI-compatible tool agents. Each assignment showcases unique use-cases of Agentic AI in different domains.
-
----
-
-## 📁 Assignment 1: AI Agents Setup with FastAPI + Gemini
-
-**Folder Name**: `assignment_1`
-
-### ✅ Objective:
-
-To build an AI agent environment using FastAPI and Gemini API, demonstrating tool-based interactions using Python functions.
-
-### 🛠️ Features:
-
-* FastAPI backend setup
-* Tool usage: Country Info (capital, language, population)
-* Environment configured with `.env` for secure key management
-
-### 🚀 Tools Used:
-
-* Python 3.10+
-* Gemini API (OpenRouter)
-* FastAPI
-* Langchain
-* Uvicorn
-
-### 📂 Files:
-
-* `main.py` → FastAPI server
-* `tools.py` → Tools for answering queries
-* `.env` → Your Gemini API key storage (do not push to GitHub)
+This repository contains three assignments developed using **OpenAI's Agentic Framework with Tool usage**, focusing on practical implementations of agents and orchestrators using Python.
 
 ---
 
-## 📁 Assignment 2: Chat Agent with Streamed Response
+## 📁 Assignment 1: Simple Capital Info Agent
 
-**Folder Name**: `assignment_2`
+### 🔹 File: `main.py`
 
-### ✅ Objective:
+This is a basic agent using the **Function as a Tool** approach.
 
-Create a conversational AI agent using LangChain’s streaming features. The user will interact with a chatbot that can answer streamed questions using async chunked input/output.
+### ✅ Features:
+- Takes a country name as input.
+- Uses a function tool to return its capital.
+- Responds through a chat loop.
 
-### 🧠 Highlights:
-
-* Chat agent with streaming
-* Uses OpenRouter Gemini-compatible model
-* Function tools for clean modular architecture
-
-### ⚙️ Tools:
-
-* Langchain
-* Langchain Community
-* Async/Streaming Support
-* OpenRouter API key setup
-
-### 📂 Files:
-
-* `agent_chat.py`
-* `stream_utils.py`
-* `tools_streaming.py`
+### 💡 Sample Output:
+User: What is the capital of France?
+Agent: The capital of France is Paris.
 
 ---
 
-## 📁 Assignment 3: Country Info Bot (Agent as Tool)
+## 📁 Assignment 2: Toolkit with Multiple Tools
 
-**Folder Name**: `assignment_3`
+### 🔹 File: `multi_toolkit.py`
 
-### ✅ Objective:
+This assignment extends the previous idea with **multiple tools** in a single toolkit agent.
 
-Build 3 agent tools that return the following for a country:
+### ✅ Tools Implemented:
+- Get Capital
+- Get Language
+- Get Population
 
-1. Capital
-2. Language
-3. Population
+### 💡 Sample Output:
+Country: Japan
+Capital: Tokyo
+Language: Japanese
+Population: 126,000,000
 
-An **orchestrator agent** then takes the user input (country name) and fetches all three details using the tools.
+markdown
+---
 
-### 🔧 Tools:
+## 📁 Assignment 3: Country Info Bot with Tool Agents
 
-* Gemini API via OpenRouter
-* LangChain
-* LangChain Tools
-* Agent Executor
+### 🔹 File: `country_info_toolkit.py`
 
-### 📦 Structure:
+This assignment builds a **multi-agent system**, where each tool is separated into its own agent. An **orchestrator agent** calls each of them as needed.
 
-```bash
-assignment_3/
-├── agent_1/           # Capital Agent
-│   └── capital_tool.py
-├── agent_2/           # Language Agent
-│   └── language_tool.py
-├── agent_3/           # Population Agent
-│   └── population_tool.py
-├── orchestrator.py    # Main entry for combining all tools
-└── .env               # Contains your OpenRouter API key
-```
+### 🧰 Agents Used:
+1. `capital_agent`: Returns the capital of the country.
+2. `language_agent`: Returns the official language(s).
+3. `population_agent`: Returns the population.
+4. `orchestrator_agent`: Coordinates all above agents to give full country info.
+
+### 💡 Sample Output:
+User: Tell me about Pakistan
+Response:
+Capital: Islamabad
+Language: Urdu
+Population: 241,000,000
 
 ---
 
-## 🧪 Running the Projects
+## 🧪 Technologies Used
+- Python 3.10+
+- OpenAI Agents SDK
+- dotenv
+- Tool Abstractions via `tool()` decorator
+- Agent-Orchestration Logic
 
-1. Clone the repo:
+---
 
-```bash
-git clone <repo-url>
-cd <assignment-folder>
-```
-
-2. Setup virtual environment:
-
-```bash
-python -m venv venv
-source venv/bin/activate  # For Windows: venv\Scripts\activate
-```
-
-3. Install dependencies:
+## 📦 Setup Instructions
 
 ```bash
+git clone https://github.com/your-username/agentic-assignments.git
+cd agentic-assignments
+
+# Install dependencies
 pip install -r requirements.txt
-```
 
-4. Add your `.env` file:
+# Set your Gemini API Key
+touch .env
+echo "GEMINI_API_KEY=your_key_here" >> .env
+🚀 Run Examples
 
-```env
-OPENROUTER_API_KEY=your_api_key_here
-```
+# For Assignment 1
+python main.py
 
-5. Run:
+# For Assignment 2
+python multi_toolkit.py
 
-```bash
-python orchestrator.py  # or appropriate entry file
-```
-
----
-
-## 🔐 Notes
-
-* Do not share or commit `.env` to GitHub
-* Always install dependencies in a virtual environment
-* Use `git add .` only after validating all files are safe
-
----
-
-## 🙌 Author
-
-Developed by **Ayesha Mughal** as part of the Agentic AI coursework.
-
----
-
-## 📬 Contact
-
-For queries, reach out via GitHub or your course platform.
-
----
-
-## 🏁 Happy Hacking!
+# For Assignment 3
+python country_info_toolkit.py
+✍️ Author
+👩‍💻 Ayesha Mughal
+🚀 Passionate about Agentic AI | Pythonista | Frontend Developer
