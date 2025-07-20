@@ -60,8 +60,8 @@ Build a country information retriever with tools.
 ```bash
 pip install openai-agents
 python product_suggester.py
-python mood_handoff.py
-python country_info_toolkit.py
+python agent_2.py
+python agent_3.py
 ```
 
 ## Author: 
